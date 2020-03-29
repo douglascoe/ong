@@ -25,4 +25,10 @@ module.exports = {
     return response.json({ id });
   },
 
+  async incidents(request, response){
+    const {ong_id} = request.params;
+    const incidents = await connection('incidents').where('ong_id',ong_id).select('*');
+    return response.json(incidents);
+  }
+
 };

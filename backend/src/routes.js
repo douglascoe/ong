@@ -11,6 +11,7 @@ const routes = express.Router();
 routes.post('/sessions', SessionController.create);
 routes.get('/ongs', OngController.index );
 routes.post('/ongs', OngController.create);
+routes.get('/ongs/:ong_id/incidents', OngController.incidents);
 routes.get('/incidents', IncidentController.index);
 routes.post('/incidents', IncidentController.create);
 routes.delete('/incidents/:id', IncidentController.delete)
